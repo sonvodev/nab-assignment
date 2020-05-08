@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Provider } from "react-redux";
+import './plugins/axios.plugin';
+import createStore from "./store";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppHeader } from "./components";
+import Forecast from "./pages/forecast";
+import { Container } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  store: any = createStore();
+
+
+  componentDidMount() {
+    console.log(process.env.REACT_APP_BASE_URL);
+  }
+  render() {
+    return <Provider store={this.store}>
+      <div className="col-12">
+        <AppHeader />
+        <div className="mt-5">
+          <Forecast />
+        </div>
+      </div>
+    </Provider>
+  }
 }
 
 export default App;
