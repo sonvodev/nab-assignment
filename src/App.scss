@@ -1,0 +1,10 @@
+:root {
+  --primary: #2f5472 !important;
+  --red: #ff5a62 !important;
+}
+* {
+  color: var(--primary);
+}
+*:focus {
+  outline: none !important;
+}
