@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Houston",
+    "location_type": "City",
+    "woeid": 2424766,
+    "latt_long": "29.760450,-95.369781"
+  },
+  {
+    "title": "Hong Kong",
+    "location_type": "City",
+    "woeid": 2165352,
+    "latt_long": "22.411200,114.153999"
+  },
+  {
+    "title": "Phoenix",
+    "location_type": "City",
+    "woeid": 2471390,
+    "latt_long": "33.448261,-112.075768"
+  },
+  {
+    "title": "Guangzhou",
+    "location_type": "City",
+    "woeid": 2161838,
+    "latt_long": "23.107389,113.267616"
+  },
+  {
+    "title": "Oklahoma City",
+    "location_type": "City",
+    "woeid": 2464592,
+    "latt_long": "35.472000,-97.520348"
+  },
+  {
+    "title": "Honolulu",
+    "location_type": "City",
+    "woeid": 2423945,
+    "latt_long": "21.304850,-157.857758"
+  },
+  {
+    "title": "Ho Chi Minh City",
+    "location_type": "City",
+    "woeid": 1252431,
+    "latt_long": "10.759180,106.662498"
+  },
+  {
+    "title": "Anchorage",
+    "location_type": "City",
+    "woeid": 2354490,
+    "latt_long": "61.217548,-149.858383"
+  },
+  {
+    "title": "Stockholm",
+    "location_type": "City",
+    "woeid": 906057,
+    "latt_long": "59.332169,18.062429"
+  },
+  {
+    "title": "Lahore",
+    "location_type": "City",
+    "woeid": 2211177,
+    "latt_long": "31.549910,74.327301"
+  },
+  {
+    "title": "Lake Tahoe",
+    "location_type": "City",
+    "woeid": 23511744,
+    "latt_long": "39.021400,-120.044823"
+  },
+  {
+    "title": "Hangzhou",
+    "location_type": "City",
+    "woeid": 2132574,
+    "latt_long": "30.252501,120.165024"
+  },
+  {
+    "title": "Windhoek",
+    "location_type": "City",
+    "woeid": 1466719,
+    "latt_long": "-22.559561,17.08445"
+  }
+]

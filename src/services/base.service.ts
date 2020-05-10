@@ -1,10 +1,6 @@
 import Axios, { AxiosRequestConfig } from "axios";
 
 export abstract class BaseService {
-  /**
-   *
-   */
-  constructor() { }
 
   async post<T, Result = any>(path: string, data: T, config?: AxiosRequestConfig): Promise<Result> {
     const result: Result | any = await Axios.post(path, data, config);

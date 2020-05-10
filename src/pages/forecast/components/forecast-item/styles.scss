@@ -1,0 +1,13 @@
+.forecastItem {
+  border: 1px dashed #ddd;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+  &__day {
+    margin-bottom: 20px;
+  }
+}

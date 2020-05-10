@@ -2,11 +2,13 @@ import React from 'react';
 import './App.scss';
 import { Provider } from "react-redux";
 import './plugins/axios.plugin';
+
 import createStore from "./store";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppHeader } from "./components";
 import Forecast from "./pages/forecast";
-import { Container } from 'react-bootstrap';
+
+
 
 class App extends React.Component {
 
@@ -18,9 +20,9 @@ class App extends React.Component {
   }
   render() {
     return <Provider store={this.store}>
-      <div className="col-12">
+      <div >
         <AppHeader />
-        <div className="mt-5">
+        <div className="col-12 mt-2">
           <Forecast />
         </div>
       </div>

@@ -1,124 +1,36 @@
 import reducers from '../store.reducers';
 import mutation from './forecast.mutations';
+import { watchFilterLocation, filterLocation, watchGetLocationForecast, getLocationForecast } from "./forecast.sagas";
+import { takeEvery } from 'redux-saga/effects';
+import * as types from "./forecast.types";
 
-describe('Test Store Mutation', () => {
+describe('watchFilterLocation', () => {
 
-  // it('Test modifyShareholderInfoAt', () => {
-  //   let state;
-  //   state = reducers({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           }),
-  //           new ShareholderListingModel({
-  //             firstname: "John",
-  //             lastname: "Maddison",
-  //             email: "john.maddison@gmail.com"
-  //           })
-  //         ], version: null, error: null
-  //       }
-  //     }
-  //   }, { type: 'Shareholder/ADD_MODIFY_SHAREHOLDER', payload: { index: 1, key: 'firstname', value: '' } });
+  const genObject = watchFilterLocation();
 
-  //   expect(state).toEqual({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           }),
-  //           new ShareholderListingModel({
-  //             firstname: "",
-  //             lastname: "Maddison",
-  //             email: "john.maddison@gmail.com"
-  //           })
-  //         ], version: null, error: null
-  //       }
-  //     }
-  //   });
+  it('should wait for evey FILTER_BY_LOCATION action and do its business ', () => {
+    expect(genObject.next().value)
+      .toEqual(takeEvery(types.FILTER_BY_LOCATION, filterLocation));
+  })
 
-  // })
+  it('should be done on next iteration', () => {
+    expect(genObject.next().done).toBeTruthy();
+  });
 
-  // it("Test validate shareholder in array", () => {
-
-  //   let state;
-  //   state = reducers({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           })
-  //         ], version: null, error: null
-  //       }
-  //     }
-  //   }, { type: 'Shareholder/ADD_VALIDATE_ITEM' });
-
-  //   expect(state).toEqual({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           })
-  //         ], version: null, error: true
-  //       }
-  //     }
-  //   })
-  // })
-
-  // it("Test addShareholderAt",() =>{
-  //   let state;
-  //   state = reducers({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           })
-  //         ], version: null, error: null
-  //       }
-  //     }
-  //   }, { type: 'Shareholder/ADD_AT', payload: 1 });
-
-  //   expect(state).toEqual({
-  //     shareholderReducer: {
-  //       shareholders: {
-  //         activity: 0, payload: [
-  //           new ShareholderListingModel({
-  //             firstname: "You",
-  //             email: "svohong@bocasay.com",
-  //             isOwner: true,
-  //             percentage: 100
-  //           }),
-  //           new ShareholderListingModel({
-  //             firstname: "",
-  //             lastname: "",
-  //             email: "",
-  //             isOwner: false,
-  //             percentage: 0
-  //           })
-  //         ], version: null, error: null
-  //       }
-  //     }
-  //   })
-  // })
 })
 
+
+describe('watchGetLocationForecast', () => {
+
+  const genObject = watchGetLocationForecast();
+
+  it('should wait for evey GET_FORECASTS action and do its business ', () => {
+    expect(genObject.next().value)
+      .toEqual(takeEvery(types.GET_FORECASTS, getLocationForecast));
+  })
+
+  it('should be done on next iteration', () => {
+    expect(genObject.next().done).toBeTruthy();
+  });
+
+})
